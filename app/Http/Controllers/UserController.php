@@ -12,6 +12,7 @@ use Validator;
 use Auth;
 use DB;
 use Exception;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -712,6 +713,11 @@ class UserController extends ApiController
             $user->profile_image = config('app.app_url').'/uploads/users/'.$filename;  
             $user->save();
             $file = $request->file('user_image');
+            $path = config('app.app_url').'/uploads';
+            if(!File::isDirectory($path)){
+                File::makeDirectory($path, 0777, true, true);
+        
+            }
             Storage::disk('public')->put('users/'.$filename, file_get_contents($file), 'public');
             
             //send success response 
