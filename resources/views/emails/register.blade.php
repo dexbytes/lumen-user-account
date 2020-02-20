@@ -68,7 +68,7 @@
                                 <TD style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 100%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: medium none; PADDING-BOTTOM: 0px; TEXT-ALIGN: center; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px; BACKGROUND-COLOR: transparent">
                                     <P style="MARGIN-BOTTOM: 0; FONT-SIZE: 18px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #a8a7a7; MARGIN-TOP: 0px; LINE-HEIGHT: 155%; BACKGROUND-COLOR: transparent; mso-line-height-rule: exactly" align=center>
                                         <FONT style="FONT-SIZE: 16px; COLOR: #e7ecf1">
-                                        ©date('Y') Space Match. All Rights Reserved
+                                        © {{date("Y")}} All Rights Reserved
                                         </FONT>
                                         <STRONG>
                                         </STRONG>

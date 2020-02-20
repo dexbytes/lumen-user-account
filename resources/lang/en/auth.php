@@ -19,10 +19,12 @@ return [
     'userNameRequired' => 'Username is required',
     'fNameRequired'    => 'First Name is required',
     'lNameRequired'    => 'Last Name is required',
+    'fullNameRequired' => 'Full Name is required',
     'emailRequired'    => 'Email is required',
     'emailInvalid'     => 'Email is invalid',
     'emailExist'     => 'Email is already exist',
     'verifyAccount' => 'Please check your email and verify your account',
+    'verifyPending' => 'Registration successfully but verification is pending',
     'imageRequired' => 'Image is required',
     'phoneRequired'    => 'Phone number is required',
     'phoneInvalid'     => 'Phone number is invalid',
@@ -62,6 +64,7 @@ return [
     'deviceTokenRequired'=> 'Device token is required',
     'loginErrorStatus' => 'Your account has been deactivated',
     'verificationCodeMatch'  => 'Verification code match successfully',
+    'something_went_wrong' => 'Something went wrong you can try again later',
     // Success
 
     'loginSuccess' => 'Logged in successfully',
