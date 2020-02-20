@@ -29,14 +29,16 @@ class UserController extends ApiController
     {
         // Request validation
         $validator = Validator::make($request->all(),[                
-            'full_name' => 'required',
+            'full_name' => 'required|min:3|max:30',
             'mobile_number' => 'required|min:10|max:15',
             'email' => 'required|email',
             'password' => 'required|min:6|max:20',
 
         ],
         [   
-            'full_name.required' => trans('auth.fNameRequired'), 
+            'full_name.required' => trans('auth.fullNameRequired'), 
+            'full_name.min' => trans('auth.fullNameMin'),
+            'full_name.max' => trans('auth.fullNameMax'), 
             'mobile_number.required' => trans('auth.mobileNumberRequired'),
             'mobile_number.min' => trans('auth.mobileNumberMin'),
             'mobile_number.max' => trans('auth.mobileNumberMax'), 
@@ -648,10 +650,11 @@ class UserController extends ApiController
 
         //Request validation
         $validator = Validator::make($request->all(),[                
-            'full_name' => 'required|max:30',
+            'full_name' => 'required|min:3|max:30',
         ],
         [   
             'full_name.required' => trans('auth.fullNameRequired'), 
+            'full_name.min' => trans('auth.fullNameMin'),
             'full_name.max' => trans('auth.fullNameMax'), 
         ]);
 

@@ -20,6 +20,8 @@ return [
     'fNameRequired'    => 'First Name is required',
     'lNameRequired'    => 'Last Name is required',
     'fullNameRequired' => 'Full Name is required',
+    'fullNameMin' => 'Full Name minimum length is 3 characters',
+    'fullNameMax' => 'Full Name maxlength is 30 characters',
     'emailRequired'    => 'Email is required',
     'emailInvalid'     => 'Email is invalid',
     'emailExist'     => 'Email is already exist',
