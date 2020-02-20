@@ -66,6 +66,7 @@ return [
     'deviceTokenRequired'=> 'Device token is required',
     'loginErrorStatus' => 'Your account has been deactivated',
     'verificationCodeMatch'  => 'Verification code match successfully',
+    'verificationCodeIsExpire' => 'Verification code has expired :verification_code',
     'something_went_wrong' => 'Something went wrong you can try again later',
     // Success
 

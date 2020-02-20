@@ -29,6 +29,9 @@ class AddVerificationCodeColumn extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function(Blueprint $table)
+        {
+            $table->dropColumn(['email_verification_code', 'is_email_verified', 'reset_password_otp', 'reset_password_expires_at']);
+        });
     }
 }

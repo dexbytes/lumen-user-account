@@ -418,7 +418,7 @@ class UserController extends ApiController
         }
         try{
             //Get user
-            $user = User::select('id', 'password', 'email')->where('email', $request->email)->where('status', 1)->first();
+            $user = User::select('id', 'email')->where('email', $request->email)->where('status', 1)->first();
 
             //Check user is exist
             if($user){
@@ -494,11 +494,22 @@ class UserController extends ApiController
    			//Check user verification code	
             $user = User::where('email', $request->email)
             ->where('reset_password_otp', $request->verification_code)
-            ->where('reset_password_expires_at', '>=', Carbon::now())
             ->first();
 
             //If user is verified
             if($user){
+                //Check user verification code with time
+                $user_otp_varification = User::where('email', $request->email)
+                    ->where('reset_password_otp', $request->verification_code)
+                    ->where('reset_password_expires_at', '<=', Carbon::now())
+                    ->first();
+
+                if($user_otp_varification){
+                    //Send error response    
+                    $message = trans('auth.verificationCodeIsExpire', ['verification_code'=> $request->verification_code]);
+                    return $this->respondConflictError($message);
+                }    
+
                 //Send success response
                 $message = trans('auth.verificationCodeMatch');
                 return $this->respondOk($request->verification_code,$message);
