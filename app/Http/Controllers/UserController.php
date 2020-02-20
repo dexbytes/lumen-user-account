@@ -709,6 +709,7 @@ class UserController extends ApiController
         try{
             //Update profile image    
             $user = Auth::user();
+            $remove_image_path = $user->profile_image;
             $filename = $user->id.'_'.time().str_random(5).'.jpg' ; 
             $user->profile_image = config('app.app_url').'/uploads/users/'.$filename;  
             $user->save();
@@ -723,6 +724,12 @@ class UserController extends ApiController
             //Upload file
             Storage::disk('public')->put('users/'.$filename, file_get_contents($file), 'public');
             
+            //Check image is exist
+            if(file_exists($remove_image_path)) {
+                //Unlink Image
+                unlink($remove_image_path);
+            }
+
             //Send success response 
             $msg = trans('auth.profileUpdatedSuccess');
             return $this->respondSuccess($msg);
@@ -761,7 +768,7 @@ class UserController extends ApiController
 
         try{
             //Image path
-            $image_path = config('app.api_directory').'uploads/users/'.$request->image_name;  
+            $image_path = config('app.directory_url').'uploads/users/'.$request->image_name;  
             //Check image is exist
             if(file_exists($image_path)) {
                //Unlink Image
