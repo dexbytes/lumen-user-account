@@ -22,66 +22,67 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 
 ## Getting Started 
 
-## First, clone the repo:
+First, clone the repo:
 
- git clone https://github.com/dexbytes/lumen-user-account.git
+    git clone https://github.com/dexbytes/lumen-user-account.git
 
-## Update composer
+Update composer
 
- composer update
+    composer update
 
-## Create env 
+Create env 
 
- cp .env.example .env
+    cp .env.example .env
 
-## Add Your database deatils
+Add Your database deatils
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_name
-DB_USERNAME=*****
-DB_PASSWORD=*****
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=db_name
+    DB_USERNAME=*****
+    DB_PASSWORD=*****
 
-## Add Your email deatils
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=
-MAIL_PASSWORD=
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=
-MAIL_FROM_NAME=
+Add Your email deatils
 
-## Run migration 
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=587
+    MAIL_USERNAME=
+    MAIL_PASSWORD=
+    MAIL_ENCRYPTION=tls
+    MAIL_FROM_ADDRESS=
+    MAIL_FROM_NAME=
 
- php artisan migrate
+Run migration 
 
-## Run Seeders
+    php artisan migrate
 
-composer dump-autoload
-php artisan db:seed
+Run Seeders
 
-## Run passport
+    composer dump-autoload
+    php artisan db:seed
 
- php artisan passport:install
+Run passport
 
- Output:
- Personal access client created successfully.
-  Client ID: 1
-  Client secret: 0uO2POKFnrl04g0SFbt6uMLHQMI2EVOj7HYCj0jy
- Password grant client created successfully.
-  Client ID: 2
-  Client secret: paISi2R3PKGLcEyORkYXkUG5TPcQFfanM5ldgopV
+    php artisan passport:install
+
+    Output:
+    Personal access client created successfully.
+        Client ID: 1
+        Client secret: 0uO2POKFnrl04g0SFbt6uMLHQMI2EVOj7HYCj0jy
+    Password grant client created successfully.
+        Client ID: 2
+        Client secret: paISi2R3PKGLcEyORkYXkUG5TPcQFfanM5ldgopV
 
 ## Set in your env file 
     ex. 
     PASSWORD_CLIENT_ID=2
     PASSWORD_CLIENT_SECRET=paISi2R3PKGLcEyORkYXkUG5TPcQFfanM5ldgopV
 
-## Run command for permission
+Run command for permission
 
-   sudo chmod -R 777 storage/
-   sudo chmod -R 777 public/
+    sudo chmod -R 777 storage/
+    sudo chmod -R 777 public/
 
 
 
